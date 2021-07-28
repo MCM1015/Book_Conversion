@@ -5,7 +5,7 @@ import { GET_ME } from '../utils/queries';
 // import { getMe, deleteBook } from '../utils/API';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
-import { REMOVE_BOOK } from '../utils/mutations';
+import { DELETE_BOOK } from '../utils/mutations';
 
 const SavedBooks = () => {
   //const [userData, setUserData] = useState({});
@@ -14,18 +14,19 @@ const SavedBooks = () => {
   // use this to determine if `useEffect()` hook needs to run again
   const userDataLength = Object.keys(userData).length;
 
-  const [deleteBook] = useMutation(REMOVE_BOOK, {
-    update(cache, {data: { deleteBook} }) {
-      try {
-        cache.writeQuery({
-          query: GET_ME,
-          data: {me: deleteBook },
-        });
-      } catch (e) {
-        console.error(e);
-      }
-    },
-  });
+  const [deleteBook] = useMutation(DELETE_BOOK)
+  //   , {
+  //   update(cache, {data: { deleteBook} }) {
+  //     try {
+  //       cache.writeQuery({
+  //         query: GET_ME,
+  //         data: deleteBook
+  //       });
+  //     } catch (e) {
+  //       console.error(e);
+  //     }
+  //   },
+  // });
 
   const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
