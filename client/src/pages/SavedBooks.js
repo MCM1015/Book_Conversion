@@ -15,18 +15,6 @@ const SavedBooks = () => {
   const userDataLength = Object.keys(userData).length;
 
   const [deleteBook] = useMutation(DELETE_BOOK)
-  //   , {
-  //   update(cache, {data: { deleteBook} }) {
-  //     try {
-  //       cache.writeQuery({
-  //         query: GET_ME,
-  //         data: deleteBook
-  //       });
-  //     } catch (e) {
-  //       console.error(e);
-  //     }
-  //   },
-  // });
 
   const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
