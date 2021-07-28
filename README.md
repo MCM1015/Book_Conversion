@@ -24,7 +24,7 @@
       npm i
       
   ## Usage
-  Go to deployed application on [Heroku](https://HEROKULINKTOCOME) or do a git clone and use 'npm run develop'.
+  Go to deployed application on [Heroku](https://safe-anchorage-21531.herokuapp.com/) or do a git clone and use 'npm run develop'.
 
   Website Preview:
 
